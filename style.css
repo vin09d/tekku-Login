@@ -7,41 +7,36 @@
 
 body {
   background: #eef2f7;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* =========================
-   BACKGROUND 16:9
-   ========================= */
+/* Background 16:9 */
 .background {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: calc(100vw * 9 / 16); /* 16:9 aspect ratio */
+  height: calc(100vw * 9 / 16);
   max-height: 100vh;
-  background: url('background.png') no-repeat center/cover;
+  background: url('bg.png') no-repeat center/cover;
   z-index: -2;
   filter: brightness(0.85);
 }
 
 /* CARD UTAMA */
 .login-card {
-  width: 900px;
-  height: 520px;
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.95);
   border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   display: flex;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  background: rgba(255,255,255,0.95);
-  position: relative;
-  z-index: 1;
   animation: fadeInCard 0.7s ease forwards;
 }
 
@@ -50,18 +45,13 @@ body {
   to {opacity: 1; transform: translateY(0);}
 }
 
-/* =========================
-   KIRI — LOGIN (GRADIENT)
-   ========================= */
+/* --------------------
+   KIRI — LOGIN
+   -------------------- */
 .login-left {
-  width: 50%;
-  padding: 50px;
-  background: linear-gradient(
-    135deg,
-    #5409DA 0%,
-    #4E71FF 55%,
-    #8DD8FF 100%
-  );
+  flex: 1;
+  padding: 40px;
+  background: linear-gradient(135deg, #5409DA 0%, #4E71FF 55%, #8DD8FF 100%);
   color: white;
   display: flex;
   flex-direction: column;
@@ -71,35 +61,26 @@ body {
 .login-left h1 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 30px;
-  animation: fadeSlide 0.7s ease forwards;
-}
-
-@keyframes fadeSlide {
-  from {opacity: 0; transform: translateX(-30px);}
-  to {opacity: 1; transform: translateX(0);}
+  margin-bottom: 25px;
 }
 
 /* FORM */
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .login-left label {
-  display: block;
-  margin-bottom: 6px;
   font-size: 0.9rem;
 }
 
-.login-left input[type="text"],
-.login-left input[type="password"] {
+.login-left input {
   width: 100%;
   padding: 12px;
   border-radius: 6px;
   border: none;
   font-size: 0.95rem;
   background: rgba(255,255,255,0.95);
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .login-left input:focus {
@@ -124,7 +105,7 @@ button {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 button:hover {
@@ -157,13 +138,13 @@ button:hover {
   100% {transform: rotate(360deg);}
 }
 
-/* LINK */
-.login-left .forgot {
+/* LINKS */
+.forgot {
+  margin-top: 10px;
   text-align: center;
-  margin-top: 12px;
 }
 
-.login-left .forgot a {
+.forgot a {
   color: #ffe2b8;
   text-decoration: none;
   font-size: 0.9rem;
@@ -171,33 +152,31 @@ button:hover {
 
 /* ERROR */
 .error {
-  margin-top: 12px;
+  margin-top: 10px;
   color: #ffe2b8;
-  font-size: 0.9rem;
   text-align: center;
+  font-size: 0.9rem;
   animation: shake 0.3s;
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+  0% { transform: translateX(0);}
+  25% { transform: translateX(-5px);}
+  50% { transform: translateX(5px);}
+  75% { transform: translateX(-5px);}
+  100% { transform: translateX(0);}
 }
 
-/* =========================
-   KANAN — WELCOME (PUTIH)
-   ========================= */
+/* --------------------
+   KANAN — WELCOME
+   -------------------- */
 .login-right {
-  width: 50%;
-  background: white;
-  color: #333;
-  padding: 50px;
+  flex: 1;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -205,29 +184,28 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px; /* jarak antara text dan logo */
+  gap: 12px;
 }
 
 .login-right h1 {
   font-size: 2rem;
-  margin: 0;
   color: #0e5cb8;
+  margin: 0;
 }
 
 .login-right img {
-  width: 150px;
+  width: 140px;
 }
 
-.login-right p {
-  max-width: 320px;
-  line-height: 1.6;
-  font-size: 0.95rem;
+.login-right .description {
+  max-width: 300px;
+  margin-top: 12px;
   color: #555;
 }
 
-/* =========================
-   SLOGAN BOTTOM CENTER DENGAN SHAPE
-   ========================= */
+/* --------------------
+   SLOGAN BOTTOM CENTER
+   -------------------- */
 .slogan-wrapper {
   position: fixed;
   bottom: 12px;
@@ -241,21 +219,34 @@ button:hover {
 
 .bottom-slogan {
   font-size: 0.9rem;
-  color: #333;
   font-weight: 500;
+  color: #333;
   text-align: center;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* =========================
+   RESPONSIVE MEDIA QUERIES
+   ========================= */
+
+/* Tablet / Medium screens */
+@media (max-width: 992px) {
   .login-card {
     flex-direction: column;
-    width: 95%;
-    height: auto;
   }
+}
 
-  .login-left,
-  .login-right {
-    width: 100%;
+/* Mobile screens */
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+  }
+  .login-left, .login-right {
+    padding: 30px;
+  }
+  .login-right img {
+    width: 120px;
+  }
+  button {
+    font-size: 0.95rem;
   }
 }
