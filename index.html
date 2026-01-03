@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tekku Cloud - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Background 16:9 -->
+<div class="background"></div>
+
+<div class="login-card">
+
+  <!-- KIRI LOGIN FORM -->
+  <div class="login-left">
+    <h1>Login</h1>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Masukkan username">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Masukkan password">
+      </div>
+
+      <button type="submit" id="loginBtn">
+        <span class="btn-text">Login</span>
+        <span class="spinner"></span>
+      </button>
+
+      <p class="forgot">
+        <a href="#">Lupa password?</a>
+      </p>
+
+      <p id="errorMessage" class="error"></p>
+    </form>
+  </div>
+
+  <!-- KANAN WELCOME -->
+  <div class="login-right">
+    <div class="welcome-wrapper">
+      <h1>WELCOME TO</h1>
+      <img src="Tekku cloud Logo.png" alt="Tekku Logo">
+    </div>
+    <p>TEKKU: Layanan teknologi personal yang siap membantu dan memudahkan hidup digital kamu.</p>
+  </div>
+
+</div>
+
+<!-- SLOGAN BOTTOM CENTER DENGAN SHAPE -->
+<div class="slogan-wrapper">
+  <p class="bottom-slogan">Your data, secure and accessible anywhere.</p>
+</div>
+
+</body>
+</html>
